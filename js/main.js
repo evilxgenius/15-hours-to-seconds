@@ -4,10 +4,15 @@
 // записати обчислене значення у змінну;
 // вивести цю змінну користувачеві через alert.
 
-const hours = +prompt('How many hours are?');
 
-if (isNaN(hours)) {
-    alert('Incorrect value. Must be a number!');
+const hours = prompt('How many hours are?');
+
+if (hours === null) {
+    alert('Bye!');
+} else if (!hours.length) {
+    alert("Input is empty! I can't calculate 'noting'. Try again");
+} else if (isNaN(+hours)) {
+    alert("Incorrect value. Must be a number!.");
 } else {
     const seconds = hours * 3600;
     alert(seconds);
